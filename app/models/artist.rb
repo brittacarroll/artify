@@ -8,4 +8,7 @@ class Artist < ActiveRecord::Base
     "photographer",
     "architect"
   ]
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 end
