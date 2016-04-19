@@ -8,6 +8,15 @@
     <%= f.text_field :first_name, autofocus: true %>
   </div>
 
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :artist_type %>
+    <%= f.select(:role, options_for_select(Artist::ARTISTS)) %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
