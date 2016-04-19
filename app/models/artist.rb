@@ -4,7 +4,7 @@ class Artist < ActiveRecord::Base
 
   ARTISTS = [
     "painter",
-    "scuptor",
+    "sculptor",
     "photographer",
     "architect"
   ]

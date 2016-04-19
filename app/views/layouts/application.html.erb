@@ -24,9 +24,11 @@
 
       <% if current_gallery %>
         <li><%= link_to "Log Out", destroy_gallery_session_path, class: "nav-link" %></li>
-      <% end %> %>
+      <% end %>
 
+      <div class="small-12 columns">
       <%= yield %>
+      </div>
 
     </body>
   </head>
