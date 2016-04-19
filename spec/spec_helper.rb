@@ -1,5 +1,6 @@
 require 'coveralls'
 Coveralls.wear!('rails')
+require 'database_cleaner'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -13,5 +14,28 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  config.backtrace_exclusion_patterns = [/.gem/, /.rubies/]
+
+    config.before(:suite) do
+      DatabaseCleaner.strategy = :transaction
+      DatabaseCleaner.clean_with(:truncation)
+    end
+
+    config.around(:each) do |example|
+      DatabaseCleaner.cleaning do
+        example.run
+      end
+    end
+
+    config.before(:each) do
+      DatabaseCleaner.start
+    end
+
+    config.after(:each) do
+      DatabaseCleaner.clean
+    end
+
+
+    config.backtrace_exclusion_patterns = [/.gem/, /.rubies/]
 end
+
+require 'database_cleaner'

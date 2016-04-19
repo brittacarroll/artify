@@ -22,5 +22,4 @@ RSpec.configure do |config|
   end
 
   config.backtrace_exclusion_patterns = [/.gem/, /.rubies/]
-  end
 end
