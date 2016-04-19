@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -9,11 +10,24 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+
+    <body>
+      <% flash.each do |name, msg| %>
+        <% if msg.is_a?(String) %>
+            <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+        <% end %>
+      <% end %>
+
+      <% if current_artist %>
+        <li><%= link_to "Log Out", destroy_artist_session_path, class: "nav-link" %></li>
+      <% end %>
+
+      <% if current_gallery %>
+        <li><%= link_to "Log Out", destroy_gallery_session_path, class: "nav-link" %></li>
+      <% end %> %>
+
+      <%= yield %>
+
+    </body>
   </head>
-
-  <body>
-
-    <%= yield %>
-
-  </body>
 </html>
