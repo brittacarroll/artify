@@ -1,4 +1,7 @@
 class Artist < ActiveRecord::Base
+  has_many :relations
+  has_many :galleries, through: :relations
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 

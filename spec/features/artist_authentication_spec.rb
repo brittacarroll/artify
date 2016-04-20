@@ -7,21 +7,13 @@ feature "artist authentication" do
   end
 
   scenario "successful sign up" do
-    visit '/artists/sign_up'
-    fill_in "First name", with: lisa.first_name
-    fill_in "Last name", with: lisa.last_name
-    select lisa.role, from: "artist_role"
-    fill_in "Email", with: lisa.email
-    fill_in "Password", with: lisa.password
-    fill_in "Password confirmation", with: lisa.password
-
-    click_button "Sign up"
-
+    artist_signs_up(lisa)
     expect(page).to have_content "You have signed up successfully"
   end
 
   scenario "unsuccessful sign up" do
-    visit '/artists/sign_up'
+    visit "/"
+    click_on "artist_sign_up"
     fill_in "First name", with: lisa.first_name
     fill_in "Last name", with: lisa.last_name
     select lisa.role, from: "artist_role"
@@ -34,16 +26,16 @@ feature "artist authentication" do
   end
 
   scenario "successful sign in" do
-    visit 'artists/sign_in'
-    fill_in "Email", with: david.email
-    fill_in "Password", with: david.password
-    click_button "Log in"
+    visit "/"
+    click_on "artist_sign_in"
+    user_signs_in(david)
 
     expect(page).to have_content "Signed in successfully."
   end
 
   scenario "unsuccessfully sign-in with incorrect data" do
-    visit 'artists/sign_in'
+    visit "/"
+    click_on "artist_sign_in"
     fill_in "Email", with: david.email
     click_button "Log in"
 
@@ -51,11 +43,11 @@ feature "artist authentication" do
   end
 
   scenario "successful sign out" do
-    visit 'artists/sign_in'
-    fill_in "Email", with: david.email
-    fill_in "Password", with: david.password
-    click_button "Log in"
-    visit '/'
+    visit "/"
+    click_on "artist_sign_in"
+
+    user_signs_in(david)
+
     click_link "Log Out"
 
     expect(page).to have_content "Signed out successfully."

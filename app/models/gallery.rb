@@ -1,4 +1,7 @@
 class Gallery < ActiveRecord::Base
+  has_many :relations
+  has_many :artists, through: :relations
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 

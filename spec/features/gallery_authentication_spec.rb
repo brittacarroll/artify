@@ -8,40 +8,33 @@ feature "gallery authentication" do
   end
 
   scenario "successful sign up" do
-    visit '/galleries/sign_up'
-    fill_in "Name", with: gallery.name
-    fill_in "Representative name", with: gallery.representative_name
-    fill_in "Email", with: gallery.email
-    fill_in "Password", with: gallery.password
-    fill_in "Password confirmation", with: gallery.password
-
-    click_button "Sign up"
-
+    gallery_signs_up(gallery)
     expect(page).to have_content "You have signed up successfully"
   end
 
   scenario "unsuccessful sign up" do
-    visit '/galleries/sign_up'
+    visit "/"
+    click_on "gallery_sign_up"
     fill_in "Name", with: gallery.name
+    fill_in "Representative name", with: gallery.representative_name
     fill_in "Password", with: gallery.password
     fill_in "Password confirmation", with: gallery.password
-
     click_button "Sign up"
 
     expect(page).to have_content("Email can't be blank")
   end
 
   scenario "successful sign in" do
-    visit 'galleries/sign_in'
-    fill_in "Email", with: gallery1.email
-    fill_in "Password", with: gallery1.password
-    click_button "Log in"
+    visit "/"
+    click_on "gallery_sign_in"
+    user_signs_in(gallery1)
 
     expect(page).to have_content "Signed in successfully."
   end
 
   scenario "unsuccessfully sign-in with incorrect data" do
-    visit 'galleries/sign_in'
+    visit "/"
+    click_on "gallery_sign_in"
     fill_in "Email", with: gallery1.email
     click_button "Log in"
 
@@ -49,11 +42,9 @@ feature "gallery authentication" do
   end
 
   scenario "successful sign out" do
-    visit 'galleries/sign_in'
-    fill_in "Email", with: gallery1.email
-    fill_in "Password", with: gallery1.password
-    click_button "Log in"
-    visit '/'
+    visit "/"
+    click_on "gallery_sign_in"
+    user_signs_in(gallery1)
     click_link "Log Out"
 
     expect(page).to have_content "Signed out successfully."
