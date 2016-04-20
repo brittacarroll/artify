@@ -4,11 +4,10 @@ feature "user signs in as artist or gallery and gets directed to right path" do
   let(:lisa) do
     FactoryGirl.create(:artist)
   end
-
   let(:gallery) do
     FactoryGirl.create(:gallery)
   end
-  
+
   scenario "artist signs in and goes to artist index" do
     visit "/"
     click_on "artist_sign_in"

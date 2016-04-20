@@ -1,8 +1,8 @@
 module Helpers
   def user_signs_in(user)
-   fill_in "Email", with: user.email
-   fill_in "Password", with: user.password
-   click_on "Log in"
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
+    click_on "Log in"
   end
 
   def artist_signs_up(artist)

@@ -1,9 +1,6 @@
 require 'rails_helper'
 
-feature "upon visiting welcome page, a new user gets redirected to right page" do
-  michael = FactoryGirl.create(:artist)
-  gallery = FactoryGirl.create(:gallery)
-
+feature "upon visiting root, a new user gets redirected to right page" do
   scenario "artist visits welcome page and is successfully redirected" do
     visit "/"
     click_on "artist_sign_up"
