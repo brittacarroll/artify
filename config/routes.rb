@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   devise_for :artists
 
   resources :welcome, only: [:index]
+  resources :artists, only: [:index]
+  resources :galleries, only: [:index]
 end

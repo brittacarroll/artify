@@ -1,5 +1,7 @@
 <h2>Welcome</h2>
 
-<h2>Are you an:</h2>
-
-<h2>artist</h2> or a <h2>gallery?</h2>
+<h2>Not a  member? Are you an:</h2>
+Artist?
+<%= link_to "Sign in", new_artist_session_path, id: "artist_sign_in" %> <%= link_to "Sign up", new_artist_registration_path, id: "artist_sign_up" %>
+Gallery?
+<%= link_to "Sign in", new_gallery_session_path, id: "gallery_sign_in" %> <%= link_to "Sign up", new_gallery_registration_path, id: "gallery_sign_up" %>
