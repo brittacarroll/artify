@@ -1,1 +1,6 @@
-<h2>Welcome, Gallery</h2>
+<h2>Welcome, <%= @gallery.name %>!</h2>
+
+
+<% if gallery_signed_in? %>
+  <%= link_to "Gallery Profile", gallery_profile_path(@profile) %>
+<% end %>

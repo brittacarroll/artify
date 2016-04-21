@@ -5,5 +5,6 @@ class ArtistsController < ApplicationController
     if artist_signed_in?
       @profile = current_artist.artists_profile
     end
+    @artist = current_artist
   end
 end
