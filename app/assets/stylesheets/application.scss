@@ -16,12 +16,13 @@
 
  */
 
- $pink: #ffcce6;
- $font-sans: "Copperplate", "Copperplate Gothic Light", sans-serif;
- $font-family: 'Open Sans', sans-serif;
- $deep_blue: #000080;
+$deep-blue: #000080;
+$pink: #ffcce6;
+$turqoise: #b3ffff;
+$font-sans: "Copperplate", "Copperplate Gothic Light", sans-serif;
+$font-family: 'Open Sans', sans-serif;
 
- body {
-   background-color: #b3ffff;
+body {
+   background-color: $turqoise;
    font-family: $font-family;
  }

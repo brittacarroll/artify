@@ -1,13 +1,12 @@
 require 'rails_helper'
 
 feature "user sees profile and able to delete account" do
-   let(:lisa) do
-     FactoryGirl.create(:artist)
-   end
-
-   let(:gallery) do
-     FactoryGirl.create(:gallery)
-   end
+  let(:lisa) do
+    FactoryGirl.create(:artist)
+  end
+  let(:gallery) do
+    FactoryGirl.create(:gallery)
+  end
 
   scenario "artist deletes account" do
     visit "/"
