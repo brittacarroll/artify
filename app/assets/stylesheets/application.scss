@@ -15,7 +15,6 @@
  *= require foundation_and_overrides
 
  */
-
 $deep-blue: #000080;
 $pink: #ffcce6;
 $turqoise: #b3ffff;
@@ -23,6 +22,6 @@ $font-sans: "Copperplate", "Copperplate Gothic Light", sans-serif;
 $font-family: 'Open Sans', sans-serif;
 
 body {
-   background-color: $turqoise;
-   font-family: $font-family;
- }
+  background-color: $turqoise;
+  font-family: $font-family;
+}
