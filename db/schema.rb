@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419232644) do
+ActiveRecord::Schema.define(version: 20160420222021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 20160419232644) do
 
   add_index "artists", ["email"], name: "index_artists_on_email", unique: true, using: :btree
   add_index "artists", ["reset_password_token"], name: "index_artists_on_reset_password_token", unique: true, using: :btree
+
+  create_table "artists_profiles", force: :cascade do |t|
+    t.integer  "artist_id"
+    t.string   "bio"
+    t.string   "avatar"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "galleries", force: :cascade do |t|
     t.string   "name",                                null: false

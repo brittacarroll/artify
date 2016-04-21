@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :welcome, only: [:index]
   resources :artists, only: [:index]
   resources :galleries, only: [:index]
+  resources :artists_profiles, only: [:show]
 end

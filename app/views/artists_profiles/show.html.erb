@@ -1,0 +1,27 @@
+<h2> <%= @profile.artist.first_name %> <%= @profile.artist.last_name %>'s Profile </h2>
+<h4>
+<%= @profile.artist.role %>
+Email: <%= @profile.artist.email %><br />
+
+</h4>
+
+<div class="edit_account">
+</div>
+<br>
+<div class="Avatar">
+  <% if @profile.avatar %>
+  <%= image_tag @profile.avatar.thumb.url %>
+   <br />
+
+  <% end %>
+</div>
+<br>
+<div class="bio">
+  <p>
+    <% if @profile.bio %>
+      <strong>Bio:</strong> <%= @profile.bio %>
+      <br><br>
+    <% end %>
+  </p>
+<br />
+</div>

@@ -15,3 +15,12 @@
  *= require foundation_and_overrides
 
  */
+
+ $turquoise: #b3ffff;
+ $font-sans: "Copperplate", "Copperplate Gothic Light", sans-serif;
+ $font-family: 'Open Sans', sans-serif;
+
+ body {
+   background-color: $turquoise;
+   font-family: $font-family;
+ }

@@ -1,1 +1,6 @@
 <h2>Welcome, Artist!</h2>
+
+
+<% if artist_signed_in? %>
+  <%= link_to "View Profile", artists_profile_path(@profile) %>
+<% end %>
