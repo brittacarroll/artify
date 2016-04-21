@@ -1,0 +1,23 @@
+<h2> <%= @profile.artist.first_name %> <%= @profile.artist.last_name %>'s Profile </h2>
+<%= @profile.artist.role.capitalize %><br />
+Email: <%= @profile.artist.email %><br />
+
+  <%= image_tag @profile.avatar.thumb.url %>
+</h4>
+
+<div class="bio">
+  <p>
+    <% if @profile.bio %>
+      About me: <%= @profile.bio %>
+      <br><br>
+    <% end %>
+  </p>
+<br />
+</div>
+
+<div class="edit_account">
+  <%= link_to "Edit profile", edit_artist_registration_path(@profile)  %>
+</div>
+  <div class="Avatar">
+    <%= link_to "Add a profile picture", edit_artists_profile_path(@profile) %>
+  </div>
