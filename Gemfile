@@ -15,6 +15,7 @@ gem 'foundation-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+gem 'dotenv-rails'
 
 
 group :development, :test do

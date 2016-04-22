@@ -7,15 +7,15 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     if resource_class == Artist
       devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name,
-        :last_name, :role, :email, :password, :password_confirmation) }
+        :last_name, :role, :email, :password, :password_confirmation, :avatar) }
       devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:first_name,
-        :last_name, :role, :email, :password, :password_confirmation) }
+        :last_name, :role, :email, :password, :password_confirmation, :avatar) }
     end
     if resource_class == Gallery
       devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name,
-        :representative_name, :email, :password, :password_confirmation) }
+        :representative_name, :email, :password, :password_confirmation, :avatar) }
       devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name,
-        :representative_name, :email, :password, :password_confirmation) }
+        :representative_name, :email, :password, :password_confirmation, :avatar) }
     end
   end
 

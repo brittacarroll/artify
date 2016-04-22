@@ -21,7 +21,22 @@ $turqoise: #b3ffff;
 $font-sans: "Copperplate", "Copperplate Gothic Light", sans-serif;
 $font-family: 'Open Sans', sans-serif;
 
-body {
-  background-color: $turqoise;
-  font-family: $font-family;
+html {
+  background-image: image-url("artify_welcome.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+};
+
+.welcome_page {
+  margin-top: 50px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.font_size {
+  font-size: 1.5rem;
 }

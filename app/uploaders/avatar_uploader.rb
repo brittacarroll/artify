@@ -5,7 +5,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
-  if Rails.env.development?
+  if Rails.env.test?
     storage :file
   else
     storage :fog
@@ -32,6 +32,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
+AKIAISNNR3B73FDZLRCA
+xy0WDLims7HWglbLIi5ytHyfBAMcyFwGgB3VOOHA
   # Create different versions of your uploaded files:
   version :thumb do
     process :resize_to_fit => [200, 200]

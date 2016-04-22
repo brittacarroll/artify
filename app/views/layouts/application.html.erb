@@ -12,23 +12,32 @@
     <%= csrf_meta_tags %>
 
     <body>
+      <div class="row column">
       <% flash.each do |name, msg| %>
         <% if msg.is_a?(String) %>
-            <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+          <div data-alert class="alert-box round <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+            <%= content_tag(:div, msg, class: "alert alert-#{name}", style: "color:white") %>
+          </div>
         <% end %>
       <% end %>
+    </div>
 
-      <% if current_artist %>
-        <li><%= link_to "Log Out", destroy_artist_session_path, class: "nav-link" %></li>
-      <% end %>
-
-      <% if current_gallery %>
-        <li><%= link_to "Log Out", destroy_gallery_session_path, class: "nav-link" %></li>
-      <% end %>
-
-      <div class="small-10 columns">
-      <%= yield %>
+      <div class="row column">
+        <%= yield %>
       </div>
+
+      <div class="row column">
+        <% if current_artist %>
+          <%= link_to "Log Out", destroy_artist_session_path, class: "nav-link" %>
+        <% end %>
+      </div>
+
+      <div class="row column">
+      <% if current_gallery %>
+        <%= link_to "Log Out", destroy_gallery_session_path, class: "nav-link" %>
+      <% end %>
+      </div>
+
 
     </body>
   </head>
