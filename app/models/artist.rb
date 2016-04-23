@@ -1,4 +1,6 @@
 class Artist < ActiveRecord::Base
+  acts_as_messageable
+
   has_many :relations
   has_many :galleries, through: :relations
   has_one :artists_profile, dependent: :destroy
@@ -15,6 +17,16 @@ class Artist < ActiveRecord::Base
   ]
 
   after_create :build_default_profile
+
+  def name
+    @artist = current_artist
+    return @artist.first_name
+  end
+
+  def mailboxer_email(current_artist)
+    return "artist@mail.com"
+  end
+
 
   validates :first_name, presence: true
   validates :last_name, presence: true

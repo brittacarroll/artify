@@ -19,6 +19,7 @@ class ArtworksController < ApplicationController
     @artwork = Artwork.new(artwork_params)
     @artist = @artwork.artist
     @profile = current_artist.artists_profile
+    binding.pry
     respond_to do |format|
       if @artwork.save
         format.html { redirect_to @profile, notice: 'Upload was successfully created.' }
@@ -29,7 +30,6 @@ class ArtworksController < ApplicationController
   end
 
   private
-
 
   def artwork_params
     params.require(:artwork).permit(
