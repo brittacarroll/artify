@@ -1,23 +1,28 @@
 <h2> <%= @profile.gallery.name %></h2>
-<%= @profile.gallery.representative_name.split.map(&:capitalize).join(' ') %><br />
-Email: <%= @profile.gallery.email %><br />
+  <%= @profile.gallery.representative_name.split.map(&:capitalize).join(' ') %><br />
+  Email: <%= @profile.gallery.email %><br />
 
-  <%= image_tag @profile.avatar.thumb.url %>
+    <%= image_tag @profile.avatar.thumb.url %>
 
 
-<div class="bio">
-  <p>
-    <% if @profile.description %>
-      About the gallery: <%= @profile.description %>
-      <br><br>
-    <% end %>
-  </p>
-<br />
-</div>
-
-<div class="edit_account">
-  <%= link_to "Edit profile", edit_gallery_registration_path(@profile)  %>
-</div>
-  <div class="Avatar">
-    <%= link_to "Add a gallery profile picture", edit_gallery_profile_path(@profile) %>
+    <div class="bio">
+      <p>
+        <% if @profile.description %>
+          About the gallery: <%= @profile.description %>
+        <br><br>
+        <% end %>
+      </p>
+    <br />
   </div>
+
+    <div class="edit_account">
+      <%= link_to "Edit profile", edit_gallery_registration_path(@profile)  %>
+    </div>
+
+    <div class="Avatar">
+      <%= link_to "Add a gallery profile picture", edit_gallery_profile_path(@profile) %>
+    </div>
+
+    <div class="home_page">
+      <%= link_to "Home", new_gallery_session_path %>
+    </div>

@@ -1,7 +1,10 @@
 class Artist < ActiveRecord::Base
+  acts_as_messageable
+
   has_many :relations
   has_many :galleries, through: :relations
   has_one :artists_profile, dependent: :destroy
+  has_many :artworks
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -14,6 +17,15 @@ class Artist < ActiveRecord::Base
   ]
 
   after_create :build_default_profile
+
+  def name
+    return "Artist"
+  end
+
+  def mailboxer_email(current_artist)
+    return "artist@mail.com"
+  end
+
 
   validates :first_name, presence: true
   validates :last_name, presence: true

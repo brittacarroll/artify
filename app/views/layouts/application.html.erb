@@ -1,35 +1,45 @@
 <!DOCTYPE html>
-<html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <title><%= content_for?(:title) ? yield(:title) : "Urbanite" %></title>
+    <link rel="icon" href="http://www.clipartbest.com/cliparts/niB/Xoe/niBXoejXT.png" />
+    <%= stylesheet_link_tag    "application", media: 'all' %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+  </head>
 
-    <body>
+  <body>
+
+
+    <div class="row column">
       <% flash.each do |name, msg| %>
         <% if msg.is_a?(String) %>
-            <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+          <div data-alert class="alert-box round <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+            <%= content_tag(:div, msg, class: "alert alert-#{name}", style: "color:white") %>
+          </div>
         <% end %>
       <% end %>
+    </div>
 
-      <% if current_artist %>
-        <li><%= link_to "Log Out", destroy_artist_session_path, class: "nav-link" %></li>
-      <% end %>
 
-      <% if current_gallery %>
-        <li><%= link_to "Log Out", destroy_gallery_session_path, class: "nav-link" %></li>
-      <% end %>
-
-      <div class="small-10 columns">
+    <div class="row column">
       <%= yield %>
-      </div>
+    </div>
 
-    </body>
-  </head>
+    <div class="row column">
+      <% if current_artist %>
+        <%= link_to "Log Out", destroy_artist_session_path, class: "nav-link" %>
+      <% end %>
+    </div>
+
+    <div class="row column">
+    <% if current_gallery %>
+      <%= link_to "Log Out", destroy_gallery_session_path, class: "nav-link" %>
+    <% end %>
+    </div>
+
+  </body>
 </html>

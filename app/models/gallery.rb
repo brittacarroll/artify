@@ -1,4 +1,6 @@
 class Gallery < ActiveRecord::Base
+  acts_as_messageable
+
   has_many :relations
   has_many :artists, through: :relations
   has_one :gallery_profile, dependent: :destroy
@@ -10,6 +12,10 @@ class Gallery < ActiveRecord::Base
   validates :representative_name, presence: true
 
   after_create :build_default_profile
+
+  def mailboxer_email(current_gallery)
+    return "gallery@mail.com"
+  end
 
   private
 

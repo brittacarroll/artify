@@ -18,10 +18,33 @@
 $deep-blue: #000080;
 $pink: #ffcce6;
 $turqoise: #b3ffff;
-$font-sans: "Copperplate", "Copperplate Gothic Light", sans-serif;
 $font-family: 'Open Sans', sans-serif;
+$light-purple: #BF5FFF;
 
-body {
-  background-color: $turqoise;
-  font-family: $font-family;
+
+html {
+  background-image: image-url("artify_welcome.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+};
+
+.centered {
+  text-align: center;
+}
+
+.font_size {
+  font-size: 1.5rem;
+}
+
+.messages {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+div.row {
+  margin-top: 30px;
 }

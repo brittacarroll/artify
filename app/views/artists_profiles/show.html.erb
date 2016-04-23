@@ -18,6 +18,14 @@ Email: <%= @profile.artist.email %><br />
 <div class="edit_account">
   <%= link_to "Edit profile", edit_artist_registration_path(@profile)  %>
 </div>
-  <div class="Avatar">
-    <%= link_to "Add a profile picture", edit_artists_profile_path(@profile) %>
-  </div>
+<div class="Avatar">
+  <%= link_to "Add a profile picture", edit_artists_profile_path(@profile) %>
+</div>
+
+<div class="art">
+  <%= link_to "Upload art", new_artist_artwork_path(@profile) %>
+</div>
+
+<div class="messages">
+  <%= link_to "Send a message", new_message_path %>
+</div>
