@@ -13,11 +13,6 @@ class Gallery < ActiveRecord::Base
 
   after_create :build_default_profile
 
-  def name
-    @gallery = current_gallery
-    return @gallery.name
-  end
-
   def mailboxer_email(current_gallery)
     return "gallery@mail.com"
   end

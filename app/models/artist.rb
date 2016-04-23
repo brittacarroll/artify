@@ -19,8 +19,7 @@ class Artist < ActiveRecord::Base
   after_create :build_default_profile
 
   def name
-    @artist = current_artist
-    return @artist.first_name
+    return "Artist"
   end
 
   def mailboxer_email(current_artist)

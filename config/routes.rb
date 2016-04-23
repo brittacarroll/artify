@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :artists_profiles, only: [:show, :edit, :update]
   resources :gallery_profiles, only: [:show, :edit, :update]
   resources :conversations, only: [:index, :show, :destroy]
+  resources :messages, only: [:new, :create]
 end
