@@ -29,17 +29,17 @@
       <%= yield %>
     </div>
 
-    <ul>
+    <div class="row column">
       <% if current_artist %>
         <%= link_to "Log Out", destroy_artist_session_path, class: "nav-link" %>
       <% end %>
-    </ul>
+    </div>
 
+    <div class="row column">
     <% if current_gallery %>
       <%= link_to "Log Out", destroy_gallery_session_path, class: "nav-link" %>
     <% end %>
-
-
+    </div>
 
   </body>
 </html>
