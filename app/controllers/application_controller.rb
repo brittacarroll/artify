@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name,
         :last_name, :role, :email, :password, :password_confirmation, :avatar) }
       devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:first_name,
-        :last_name, :role, :email, :password, :password_confirmation, :avatar) }
+        :last_name, :role, :email, :password, :password_confirmation, :avatar, :description,
+        :title, :art) }
     end
     if resource_class == Gallery
       devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name,

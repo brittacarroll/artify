@@ -1,6 +1,15 @@
 <h2>Welcome, <%= @artist.first_name.capitalize %>!</h2>
 
 
+
+
+Recently uploaded artwork
+  <% if @art != nil %>
+  <%= image_tag @art.thumb.url %>
+  <% end %>
+
+
+
 <% if artist_signed_in? %>
   <%= link_to "My Profile", artists_profile_path(@profile) %>
 <% end %>

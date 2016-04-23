@@ -2,6 +2,7 @@ class Artist < ActiveRecord::Base
   has_many :relations
   has_many :galleries, through: :relations
   has_one :artists_profile, dependent: :destroy
+  has_many :artworks
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

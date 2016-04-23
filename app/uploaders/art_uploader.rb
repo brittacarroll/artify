@@ -1,11 +1,11 @@
 # encoding: utf-8
 
-class AvatarUploader < CarrierWave::Uploader::Base
+class ArtUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
-  if Rails.env.development?
+  if Rails.env.test?
     storage :file
   else
     storage :fog
