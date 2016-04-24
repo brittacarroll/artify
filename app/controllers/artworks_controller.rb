@@ -5,7 +5,6 @@ class ArtworksController < ApplicationController
   def index
     @artist = current_artist
     @profile = current_artist.artists_profile
-    @art = Artwork.find(params[:id])
   end
 
   def new
@@ -15,14 +14,15 @@ class ArtworksController < ApplicationController
   end
 
   def create
-    binding.pry
+    @profile = current_artist
     @artwork = Artwork.new(artwork_params)
     @artist = @artwork.artist
     @profile = current_artist.artists_profile
-    binding.pry
+
     respond_to do |format|
       if @artwork.save
-        format.html { redirect_to @profile, notice: 'Upload was successfully created.' }
+        format.html { redirect_to artists_path,
+          notice: 'Upload was successfully created.' }
       else
         format.html { render :new }
       end
@@ -33,9 +33,9 @@ class ArtworksController < ApplicationController
 
   def artwork_params
     params.require(:artwork).permit(
-    :title,
-    :description,
-    :art
-    ).merge(artist: Artist.find(params[:artist_id]))
+      :art,
+      :title,
+      :description,
+      ).merge(artist: Artist.find(params[:artist_id]))
   end
 end

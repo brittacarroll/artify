@@ -15,7 +15,6 @@ gem 'foundation-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
-gem 'dotenv-rails'
 gem 'mailboxer'
 
 
@@ -28,6 +27,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'database_cleaner'
   gem 'valid_attribute'
+  gem 'dotenv-rails'
 end
 
 group :test do

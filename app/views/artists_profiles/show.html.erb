@@ -3,7 +3,7 @@
 Email: <%= @profile.artist.email %><br />
 
   <%= image_tag @profile.avatar.thumb.url %>
-</h4>
+
 
 <div class="bio">
   <p>
@@ -12,14 +12,15 @@ Email: <%= @profile.artist.email %><br />
       <br><br>
     <% end %>
   </p>
-<br />
+  <br />
 </div>
 
 <div class="edit_account">
   <%= link_to "Edit profile", edit_artist_registration_path(@profile)  %>
 </div>
+
 <div class="Avatar">
-  <%= link_to "Add a profile picture", edit_artists_profile_path(@profile) %>
+  <%= link_to "Add a profile picture and edit bio", edit_artists_profile_path(@profile) %>
 </div>
 
 <div class="art">

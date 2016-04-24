@@ -3,5 +3,5 @@ class Artwork < ActiveRecord::Base
   mount_uploader :art, ArtUploader
 
   validates :title, presence: true
-  validates :artist, presence: true
+  validates :artist_id, presence: true
 end

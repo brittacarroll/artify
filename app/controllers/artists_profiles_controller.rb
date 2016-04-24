@@ -12,7 +12,6 @@ class ArtistsProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @profile.update(artists_profile_params)
-        binding.pry
         format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
       else
         format.html { render :edit }

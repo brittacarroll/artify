@@ -1,15 +1,35 @@
-<h2>Welcome, <%= @artist.first_name.capitalize %>!</h2>
-
-
-
-
-Recently uploaded artwork
-  <% if @art != nil %>
-  <%= image_tag @art.thumb.url %>
-  <% end %>
-
-
 
 <% if artist_signed_in? %>
+<h2>Welcome, <%= @artist.first_name.capitalize %>!</h2>
   <%= link_to "My Profile", artists_profile_path(@profile) %>
+<% end %>
+
+<div class="centered">
+Recently uploaded artwork
+</div>
+  <div class="row">
+
+  <% if @art != nil %>
+    <% @art.each do |piece| %>
+    <ul>
+      <div class="small-6 columns centered">
+        <% if gallery_signed_in? && piece.artist != nil %>
+            <li><%= image_tag piece.art.thumb.url %></li>
+            <li><%= link_to "Artist: #{piece.artist.first_name} #{piece.artist.last_name}",
+                    artists_profile_path(@artist_profile), id: "artist_name" %></li>
+            <li>Title: <%= piece.title %></li>
+            <li>Description: <%= piece.description %></li>
+        <% elsif artist_signed_in? && piece.artist != nil %>
+          <li><%= image_tag piece.art.thumb.url %></li>
+          <li>Artist:<%= piece.artist.first_name %> <% piece.artist.last_name %></li>
+          <li>Title: <%= piece.title %></li>
+          <li>Description: <%= piece.description %></li>
+        <% end %>
+    </ul>
+    <% end %>
+  <% end %>
+</div>
+
+<% if gallery_signed_in? %>
+  <% link_to "Home", galleries_path %>
 <% end %>
