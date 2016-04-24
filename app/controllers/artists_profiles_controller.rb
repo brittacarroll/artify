@@ -18,6 +18,7 @@ class ArtistsProfilesController < ApplicationController
         format.html { render :edit }
       end
     end
+    binding.pry
     @profile = current_artist
   end
 

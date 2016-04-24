@@ -14,16 +14,14 @@
   <body>
 
 
-    <div class="row column">
-      <% flash.each do |name, msg| %>
-        <% if msg.is_a?(String) %>
-          <div data-alert class="alert-box round <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
-            <%= content_tag(:div, msg, class: "alert alert-#{name}", style: "color:white") %>
-          </div>
-        <% end %>
+  <div class="row column">
+    <% flash.each do |name, msg| %>
+      <% if msg.is_a?(String) %>
+        <div data-alert class="alert-box round <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+          <%= content_tag(:div, msg, class: "alert alert-#{name}", style: "color:white") %>
+        </div>
       <% end %>
-    </div>
-
+    <% end %>
 
     <div class="row column">
       <%= yield %>

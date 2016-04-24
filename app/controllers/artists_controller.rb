@@ -4,5 +4,6 @@ class ArtistsController < ApplicationController
   def index
     @artist = current_artist
     @profile = current_artist.artists_profile
+    @art = Artwork.all
   end
 end
