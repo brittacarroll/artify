@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :welcome, only: [:index]
   resources :artists do
-    resources :artworks, only: [:new, :create, :index]
+    resources :artworks, only: [:new, :create, :index, :destroy]
   end
 
   resources :galleries, only: [:index]

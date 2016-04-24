@@ -29,6 +29,15 @@ class ArtworksController < ApplicationController
     end
   end
 
+  def destroy
+    binding.pry
+    @artwork = Artwork.find_by(params[:id])
+    @artwork.destroy
+    flash[:notice] = "Your artwork was successfully deleted."
+    redirect_to artists_path
+  end
+
+
   private
 
   def artwork_params

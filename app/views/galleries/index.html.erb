@@ -1,9 +1,10 @@
 <h2>Welcome, <%= @gallery.name %>!</h2>
 
-<div class="text-center">
+
   <div class="links">
     <% if gallery_signed_in? %>
       <%= link_to "Gallery Profile", gallery_profile_path(@profile) %>
+      <%= link_to "Recently uploaded art", artists_path %>
     <% end %>
   </div>
 </div>
