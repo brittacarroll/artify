@@ -3,7 +3,6 @@ require 'rails_helper'
 feature "gallery sees artists' profile" do
   let(:gallery) { FactoryGirl.create(:gallery) }
 
-
   scenario "gallery signs in sees link to uploaded art" do
     visit "/"
     click_on "gallery_sign_in"
