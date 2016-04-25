@@ -22,7 +22,7 @@ $font-family: 'Open Sans', sans-serif;
 $light-purple: #BF5FFF;
 $off-white: #b38b0d;
 $white: #ffffff
-$cool-turqoise: #7dc3e8;
+
 
 html#homepage {
   background-image: image-url("artify_welcome.jpg");
@@ -34,7 +34,7 @@ html#homepage {
 
 html {
   background-attachment: fixed;
-  background-color: $cool-turqoise;
+  background-color: #7DC3E8;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -72,7 +72,7 @@ li {
 
 hr {
   border: 0;
-  border-bottom: 1px solid $white;
+  border-bottom: 1px solid #ffffff;
   clear: both;
   display: block;
   font-size: 1px;
@@ -86,8 +86,8 @@ hr {
 }
 
 .message-border {
-  border-bottom: 2px dotted $off-white;
-  border-color: $white;
+  border-bottom: 2px dotted #b38b0d;
+  border-color: white;
   border-style: solid;
   border-width: 20px;
   margin-top: 19px;
