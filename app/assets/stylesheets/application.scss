@@ -20,8 +20,6 @@ $pink: #ffcce6;
 $turqoise: #b3ffff;
 $font-family: 'Open Sans', sans-serif;
 $light-purple: #BF5FFF;
-$off-white: #b38b0d;
-$white: #ffffff
 
 
 html#homepage {
@@ -33,11 +31,11 @@ html#homepage {
  }
 
 html {
-  background-attachment: fixed;
   background-color: #7DC3E8;
-  background-position: center center;
   background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
+  background-attachment: fixed;
 };
 
 .centered {
@@ -71,7 +69,7 @@ li {
 }
 
 hr {
-  border: 0;
+  border: none;
   border-bottom: 1px solid #ffffff;
   clear: both;
   display: block;
