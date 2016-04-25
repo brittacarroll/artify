@@ -31,7 +31,6 @@ html#homepage {
   background-attachment: fixed;
  }
 
-
 html {
   background-color: #7DC3E8;
   background-repeat: no-repeat;
@@ -71,34 +70,33 @@ li {
 }
 
 hr {
- display: block;
- position: relative;
- padding: 0;
- margin: 8px auto;
- height: 0;
- width: 100%;
- max-height: 0;
- font-size: 1px;
- line-height: 0;
- clear: both;
- border: none;
- border-bottom: 1px solid #ffffff;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  clear: both;
+  display: block;
+  font-size: 1px;
+  height: 0;
+  line-height: 0;
+  margin: 8px auto;
+  max-height: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
 }
 
-
-.message_border {
-  margin-top:19px;
+.message-border {
   border-bottom: 2px dotted #b38b0d;
+  border-color:white;
   border-size:2px;
   border-style: solid;
-  border-color:white;
   border-width: 20px;
+  margin-top:19px;
 }
 
 .image {
   float: left;
 }
 
-.image_border {
-  padding: 7px 7px 7px 15px ;
+.image-border {
+  padding: 7px 7px 7px 15px;
 }
