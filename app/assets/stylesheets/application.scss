@@ -21,8 +21,17 @@ $turqoise: #b3ffff;
 $font-family: 'Open Sans', sans-serif;
 $light-purple: #BF5FFF;
 
-html {
+html#homepage {
+
   background-image: image-url("artify_welcome.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+ }
+
+html {
+  background-color: #7DC3E8;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -58,4 +67,35 @@ div.row {
 
 li {
   list-style-type: none;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  clear: both;
+  display: block;
+  font-size: 1px;
+  height: 0;
+  line-height: 0;
+  margin: 8px auto;
+  max-height: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+.message-border {
+  border-bottom: 2px dotted #b38b0d;
+  border-color: white;
+  border-style: solid;
+  border-width: 20px;
+  margin-top: 19px;
+}
+
+.image {
+  float: left;
+}
+
+.image-border {
+  padding: 7px 7px 7px 15px;
 }
