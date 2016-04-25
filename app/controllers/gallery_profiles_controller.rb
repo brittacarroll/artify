@@ -4,6 +4,8 @@ class GalleryProfilesController < ApplicationController
 
   def show
     @profile = GalleryProfile.find(params[:id])
+    @gallery = current_gallery
+    @relations = @gallery.artists
   end
 
   def edit

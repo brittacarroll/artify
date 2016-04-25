@@ -1,15 +1,31 @@
-<div class="panel panel-default">
-  <div class="panel-heading"><%= @conversation.subject %></div>
-
-  <div class="panel-body">
-    <div class="messages">
-      <% @conversation.receipts_for(current_artist).each do |receipt| %>
-        <% message = receipt.message %>
-
-        <%= message.sender.name %>
-          says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
-        <%= message.body %>
-      <% end %>
-    </div>
-  </div>
+<div class="centered">
+  <h3>Sent messages</h3>
 </div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+
+    <div class="row">
+
+    <div class="small-6 small-centered columns">
+      <div class="message_border">
+      <div class="panel">
+        <div class="messages">
+          <div class="image image_border">
+          <%= image_tag @profile.avatar.thumb.url %>
+          </div>
+
+          <% @conversation.receipts_for(current_artist).each do |receipt| %>
+          Subject: <%= @conversation.subject %> <br />
+          <% message = receipt.message %>
+          Sender: <%= message.sender.name %> <br />
+
+          Message: <%= message.body %>
+          Sent at: <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
+        </div>
+          <% end %>
+        </div>
+        </div>
+        </div>
+      </div>
+      </div>
+    </div>

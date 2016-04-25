@@ -15,6 +15,15 @@
     <br />
   </div>
 
+      <div class="small-6 columns centered">
+        Selected artists:
+          <% if @relations != nil %>
+            <% @relations.each do |artist| %>
+              <%= artist.first_name %> <%= artist.last_name %>
+            <% end %>
+          <% end %>
+        </div>
+
     <div class="edit_account">
       <%= link_to "Edit profile", edit_gallery_registration_path(@profile)  %>
     </div>
@@ -22,6 +31,7 @@
     <div class="Avatar">
       <%= link_to "Add a gallery profile picture", edit_gallery_profile_path(@profile) %>
     </div>
+
 
     <div class="home_page">
       <%= link_to "Home", new_gallery_session_path %>
