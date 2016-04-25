@@ -20,8 +20,9 @@ $pink: #ffcce6;
 $turqoise: #b3ffff;
 $font-family: 'Open Sans', sans-serif;
 $light-purple: #BF5FFF;
-
-
+$off-white: #b38b0d;
+$white: #ffffff
+$cool-turqoise: #7dc3e8;
 
 html#homepage {
   background-image: image-url("artify_welcome.jpg");
@@ -32,11 +33,11 @@ html#homepage {
  }
 
 html {
-  background-color: #7DC3E8;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
   background-attachment: fixed;
+  background-color: $cool-turqoise;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 };
 
 .centered {
@@ -70,8 +71,8 @@ li {
 }
 
 hr {
-  border: none;
-  border-bottom: 1px solid #ffffff;
+  border: 0;
+  border-bottom: 1px solid $white;
   clear: both;
   display: block;
   font-size: 1px;
@@ -85,12 +86,11 @@ hr {
 }
 
 .message-border {
-  border-bottom: 2px dotted #b38b0d;
-  border-color:white;
-  border-size:2px;
+  border-bottom: 2px dotted $off-white;
+  border-color: $white;
   border-style: solid;
   border-width: 20px;
-  margin-top:19px;
+  margin-top: 19px;
 }
 
 .image {
