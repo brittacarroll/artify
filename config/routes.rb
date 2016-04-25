@@ -9,8 +9,12 @@ Rails.application.routes.draw do
   end
 
   resources :galleries, only: [:index]
-  resources :artists_profiles, only: [:show, :edit, :update]
+  resources :artists_profiles, only: [:show, :edit, :update] do
+    resources :relations, only: [:create]
+  end
+
   resources :gallery_profiles, only: [:show, :edit, :update]
   resources :conversations, only: [:index, :show, :destroy]
   resources :messages, only: [:new, :create]
+
 end

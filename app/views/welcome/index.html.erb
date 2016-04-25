@@ -1,22 +1,23 @@
-<div class="small-12 columns welcome_page">
-  <div class="small-12 medium-8 medium-centered columns">
-    <div class="small-12 columns centered">
+<html id="homepage">
+<div class="welcome">
+  <div class="small-12 columns welcome_page">
+    <div class="small-12 medium-8 medium-centered columns">
+      <div class="small-12 columns centered">
 
         <h2>Welcome to Artify</h2>
-
-    </div>
-  <div class="small-12 columns">
-    <div class="small-6 columns">
-      <div class="small-12 columns centered font_size">
-        <h3>Artist</h3>
       </div>
-      <div class="small-12 columns centered">
-        <ul class="breadcrumbs">
-            <%= link_to "Sign in", new_artist_session_path, id: "artist_sign_in" %> |
-            <%= link_to "Sign up", new_artist_registration_path, id: "artist_sign_up" %>
-        </ul>
-      </div>
-    </div>
+      <div class="small-12 columns">
+        <div class="small-6 columns">
+          <div class="small-12 columns centered font_size">
+            <h3>Artist</h3>
+          </div>
+          <div class="small-12 columns centered">
+            <ul class="breadcrumbs">
+              <%= link_to "Sign in", new_artist_session_path, id: "artist_sign_in" %> |
+              <%= link_to "Sign up", new_artist_registration_path, id: "artist_sign_up" %>
+            </ul>
+          </div>
+        </div>
 
 
     <div class="small-6 columns centered">
@@ -34,3 +35,5 @@
   </div>
 </div>
 </div>
+</div>
+</html>

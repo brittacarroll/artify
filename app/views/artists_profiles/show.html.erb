@@ -15,6 +15,8 @@ Email: <%= @profile.artist.email %><br />
   <br />
 </div>
 
+
+My art:
 <div class="edit_account">
   <%= link_to "Edit profile", edit_artist_registration_path(@profile)  %>
 </div>
@@ -30,3 +32,7 @@ Email: <%= @profile.artist.email %><br />
 <div class="messages">
   <%= link_to "Send a message", new_message_path %>
 </div>
+
+<% if gallery_signed_in? %>
+  <%= link_to "Select this artist", artists_profile_relations_path(@profile.artist), method: :post %>
+<% end %>
