@@ -4,6 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!-- 33 KB -->
+
+    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+
     <title><%= content_for?(:title) ? yield(:title) : "Urbanite" %></title>
     <link rel="icon" href="http://www.clipartbest.com/cliparts/niB/Xoe/niBXoejXT.png" />
     <%= stylesheet_link_tag    "application", media: 'all' %>
@@ -12,6 +18,12 @@
   </head>
 
   <body>
+
+    <nav class="top-bar" datar-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">Artify</a></h1>
+        </li>
 
 
   <div class="row column">

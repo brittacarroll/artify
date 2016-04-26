@@ -21,8 +21,8 @@ $turqoise: #b3ffff;
 $font-family: 'Open Sans', sans-serif;
 $light-purple: #BF5FFF;
 
+html {
 
-html#homepage {
   background-image: image-url("artify_welcome.jpg");
   background-repeat: no-repeat;
   background-position: center center;
@@ -30,14 +30,17 @@ html#homepage {
   background-attachment: fixed;
  }
 
-html {
-  background-color: #7DC3E8;
+html#artists {
+  background-image: image-url("lavender-paper-texture.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
-};
+}
 
+.fotorama {
+  float: center;
+}
 .centered {
   text-align: center;
 }
