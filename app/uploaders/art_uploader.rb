@@ -29,13 +29,13 @@ class ArtUploader < CarrierWave::Uploader::Base
   # process :scale => [200, 300]
   #
   # def scale(width, height)
-  #   # do something
+  #   width:
   # end
-
+  #
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process resize_to_fit: [300, 300]
+    process resize_to_fit: [500, 500]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

@@ -1,3 +1,5 @@
+
+<ul class="side-nav">
 <h2> <%= @profile.artist.first_name %> <%= @profile.artist.last_name %>'s Profile </h2>
 <%= @profile.artist.role.capitalize %><br />
 Email: <%= @profile.artist.email %><br />
@@ -14,6 +16,7 @@ Email: <%= @profile.artist.email %><br />
   </p>
   <br />
 </div>
+
 
 
 My art:
@@ -36,3 +39,4 @@ My art:
 <% if gallery_signed_in? %>
   <%= link_to "Select this artist", artists_profile_relations_path(@profile.artist), method: :post %>
 <% end %>
+</ul>

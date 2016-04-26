@@ -1,42 +1,47 @@
 
 
-
+<html id="artists">
 <div class="centered">
 <hr>Recently uploaded artwork</hr>
 </div>
-<% if artist_signed_in? %>
-<h2>Welcome, <%= @artist.first_name.capitalize %>!</h2>
-  <%= link_to "My Profile", artists_profile_path(@profile) %>
-<% end %>
+  <% if artist_signed_in? %>
+    <h2>Welcome, <%= @artist.first_name.capitalize %>!</h2>
+    <%= link_to "My Profile", artists_profile_path(@profile) %>
+  <% end %>
 
-<div class="fotorama">
+  <% if gallery_signed_in? %>
+    <%= link_to "Home", galleries_path %>
+  <% end %>
 
-  <% if @art != nil %>
-    <% @art.each do |piece| %>
-    <ul>
+<div class="row">
+    <div class="fotorama centered"
+        data-width="100%"
+        data-height="80%">
 
-          <% if gallery_signed_in? && piece.artist != nil %>
 
-              <li><%= image_tag piece.art.thumb.url %></li>
-            </div>
-        </div>
-          <li><%= link_to "Artist: #{piece.artist.first_name} #{piece.artist.last_name}",
-              artists_profile_path(@artist_profile), id: "artist_name" %></li>
-          <li>Title: <%= piece.title %></li>
-          <li>Description: <%= piece.description %></li>
+      <% if @art != nil %>
+        <% @art.each do |piece| %>
+      <ul>
+        <% if gallery_signed_in? && piece.artist != nil %>
+            <li><%= image_tag piece.art.thumb.url %></li>
+            <li><%= link_to "Artist: #{piece.artist.first_name} #{piece.artist.last_name}",
+                artists_profile_path(@artist_profile), id: "artist_name" %></li>
+            <hr><li>Title: <%= piece.title %></li></hr>
+            <hr><li>Description: <%= piece.description %></li></hr>
         <% elsif artist_signed_in? && piece.artist != nil %>
-          <li><%= image_tag piece.art.thumb.url %></li>
-          <li><%= link_to "Artist: #{piece.artist.first_name} #{piece.artist.last_name}",
-              artists_profile_path(@profile), id: "artist_name" %></li>
-          <li>Title: <%= piece.title %></li>
-          <li>Description: <%= piece.description %></li>
+            <li><%= image_tag piece.art.thumb.url %></li>
+            <li><%= link_to "Artist: #{piece.artist.first_name} #{piece.artist.last_name}",
+                artists_profile_path(@profile), id: "artist_name" %></li>
+            <hr><li>Title: <%= piece.title %></li></hr>
+            <hr>
+            <li>Description: <%= piece.description %></li>
         <% end %>
       </ul>
       <% end %>
     <% end %>
     </div>
+    </div>
+  </div>
+</div>
 
-
-<% if gallery_signed_in? %>
-  <% link_to "Home", galleries_path %>
-<% end %>
+</html>
