@@ -1,13 +1,11 @@
 class ConversationsController < ApplicationController
-  # before_action :get_mailbox
-  # before_action :get_conversation, except: [:index]
-
   def new
   end
 
   def create
     recipients = Artist.where(id: conversation_params[:recipients])
-    conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
+    conversation = current_user.send_message(recipients,
+    conversation_params[:body], conversation_params[:subject]).conversation
 
     flash[:success] = "Your message was successfully sent!"
     redirect_to conversation_path(conversation)
@@ -34,20 +32,6 @@ class ConversationsController < ApplicationController
     redirect_to mailbox_inbox_path
   end
 
-
-  # def index
-  #   @conversations = @mailbox.inbox.all
-  # end
-  #
-  # def show
-  #   @profile = current_artist.artists_profile
-  # end
-  #
-  # def reply
-  #   current_artist.reply_to_conversation(conversation, params[:body])
-  #   redirect_to conversation_path(@conversation)
-  # end
-
   private
 
   def conversation_params
@@ -57,12 +41,4 @@ class ConversationsController < ApplicationController
   def message_params
     params.require(:message).permit(:body, :subject)
   end
-
-  # def get_conversation
-  #   @conversation ||= @mailbox.conversations.find(params[:id])
-  # end
-  #
-  # def get_mailbox
-  #   @mailbox ||= current_artist.mailbox
-  # end
 end

@@ -14,7 +14,6 @@ class ApplicationController < ActionController::Base
     @conversation ||= mailbox.conversations.find(params[:id])
   end
 
-
   protected
 
   def configure_permitted_parameters
@@ -53,7 +52,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     if current_artist
-       current_artist
+      current_artist
     else
       current_gallery
     end
