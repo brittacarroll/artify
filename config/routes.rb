@@ -16,10 +16,18 @@ Rails.application.routes.draw do
   resources :gallery_profiles, only: [:show, :edit, :update]
 
   #mailbox folder routes
-  get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
-  get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
-  get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash
+  get "mailboxes/inbox" => "mailboxes#inbox", as: :mailbox_inbox
+  get "mailboxes/sent" => "mailboxes#sent", as: :mailbox_sent
+  get "mailboxes/trash" => "mailboxes#trash", as: :mailbox_trash
 
-  resources :conversations, only: [:index, :show, :destroy]
-  resources :messages, only: [:new, :create]
+  resources :conversations do
+    member do
+      post :reply
+      post :trash
+      post :untrash
+    end
+  end
+  #
+  # resources :conversations, only: [:index, :show, :destroy]
+  # resources :messages, only: [:new, :create]
 end

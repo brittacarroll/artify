@@ -28,8 +28,10 @@
           <li class="nav"> <%= link_to "Go Home", welcome_index_path, class: "nav-link" %></li>
           <% if gallery_signed_in? %>
             <li class="nav"> <%= link_to "Log Out", destroy_gallery_session_path, class: "nav-link" %></li><br />
+            <li><%= link_to "Inbox", mailbox_inbox_path %></li>
           <% else %>
             <li class="nav"> <%= link_to "Log Out", destroy_artist_session_path, class: "nav-link" %></li><br />
+            <li><%= link_to "Inbox", mailbox_inbox_path %></li>
           <% end %>
         </ul>
 
