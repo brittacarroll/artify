@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
 
+  helper_method :mailbox
+
   protected
 
   def configure_permitted_parameters
@@ -24,6 +26,10 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound do
     flash[:warning] = 'Resource not found.'
     redirect_back_or root_path
+  end
+
+  def artist_mailbox
+    @mailbox ||= current_artist.artist_mailbox
   end
 
   def redirect_back_or(path)

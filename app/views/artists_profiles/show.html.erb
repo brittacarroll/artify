@@ -19,22 +19,23 @@ Email: <%= @profile.artist.email %><br />
 
 
 
-My art:
-<div class="edit_account">
-  <%= link_to "Edit profile", edit_artist_registration_path(@profile)  %>
-</div>
+<% if artist_signed_in? %>
+  <div class="edit_account">
+    <%= link_to "Edit profile", edit_artist_registration_path(@profile)  %>
+  </div>
 
-<div class="Avatar">
-  <%= link_to "Add a profile picture and edit bio", edit_artists_profile_path(@profile) %>
-</div>
+  <div class="Avatar">
+    <%= link_to "Add a profile picture and edit bio", edit_artists_profile_path(@profile) %>
+  </div>
 
-<div class="art">
-  <%= link_to "Upload art", new_artist_artwork_path(@profile) %>
-</div>
+  <div class="art">
+    <%= link_to "Upload art", new_artist_artwork_path(@profile) %>
+  </div>
 
-<div class="messages">
-  <%= link_to "Send a message", new_message_path %>
-</div>
+  <div class="messages">
+    <%= link_to "Send a message", new_message_path %>
+  </div>
+<% end %>
 
 <% if gallery_signed_in? %>
   <%= link_to "Select this artist", artists_profile_relations_path(@profile.artist), method: :post %>

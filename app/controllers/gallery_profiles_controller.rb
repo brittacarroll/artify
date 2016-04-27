@@ -6,6 +6,13 @@ class GalleryProfilesController < ApplicationController
     @profile = GalleryProfile.find(params[:id])
     @gallery = current_gallery
     @relations = @gallery.artists
+    @artist_profile = ArtistsProfile.find_by(params[:artist_id])
+
+    if params[:search]
+      @artists = Artists.search(params[:search]).order("created_at DESC")
+    else
+      @artists = Artists.all.order('created_at DESC')
+    end
   end
 
   def edit
