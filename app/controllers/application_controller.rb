@@ -2,7 +2,17 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
 
-  helper_method :mailbox
+  helper_method :mailbox, :current_user, :conversation
+
+  private
+
+  def mailbox
+    @mailbox ||= current_user.mailbox
+  end
+
+  def conversation
+    @conversation ||= mailbox.conversations.find(params[:id])
+  end
 
   protected
 
@@ -28,10 +38,6 @@ class ApplicationController < ActionController::Base
     redirect_back_or root_path
   end
 
-  def artist_mailbox
-    @mailbox ||= current_artist.artist_mailbox
-  end
-
   def redirect_back_or(path)
     redirect_to request.referer || path
   end
@@ -41,6 +47,14 @@ class ApplicationController < ActionController::Base
       :authenticate_artist
     elsif @current_gallery == current_gallery
       :authenticate_gallery
+    end
+  end
+
+  def current_user
+    if current_artist
+      current_artist
+    else
+      current_gallery
     end
   end
 
