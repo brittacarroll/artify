@@ -1,7 +1,7 @@
 class GalleriesController < ApplicationController
   before_action :authenticate!
 
-  def index
+  def index    
     if gallery_signed_in?
       @profile = current_gallery.gallery_profile
     end

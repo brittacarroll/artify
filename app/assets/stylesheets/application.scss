@@ -20,6 +20,33 @@ $pink: #ffcce6;
 $turqoise: #b3ffff;
 $font-family: 'Open Sans', sans-serif;
 $light-purple: #BF5FFF;
+$white: #ffffff;
+
+.top-bar {
+  background-color: darken($deep-blue, 10%);
+  background-position: center;
+  height: 225px;
+}
+
+.top-bar-right li {
+  float: right;
+  display: list-item
+}
+
+.nav {
+  font-color: $white;
+  padding-bottom: 5px
+}
+
+.top-bar-left {
+  float: left;
+  background-image: image-url("artify.png");
+}
+
+.dropdown.menu {
+  background-color: transparent;
+}
+
 
 html {
 

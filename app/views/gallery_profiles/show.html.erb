@@ -15,11 +15,13 @@
     <br />
   </div>
 
-      <div class="small-6 columns centered">
+      <div class="small-6 columns gallery-artists border">
         Selected artists:
           <% if @relations != nil %>
             <% @relations.each do |artist| %>
-              <%= artist.first_name %> <%= artist.last_name %>
+            <ul>
+              <li class="gallery"><%= link_to "#{artist.first_name} #{artist.last_name}", artists_profile_path(@artist_profile) %><li>
+            </ul>
             <% end %>
           <% end %>
         </div>

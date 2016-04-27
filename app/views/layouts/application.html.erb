@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!-- 33 KB -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 
-    <title><%= content_for?(:title) ? yield(:title) : "Urbanite" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Artify" %></title>
     <link rel="icon" href="http://www.clipartbest.com/cliparts/niB/Xoe/niBXoejXT.png" />
     <%= stylesheet_link_tag    "application", media: 'all' %>
     <%= javascript_include_tag "application" %>
@@ -18,13 +18,23 @@
   </head>
 
   <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        Hello
+      </div>
 
-    <nav class="top-bar" datar-topbar role="navigation">
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="#">Artify</a></h1>
-        </li>
+      <div class="top-bar-right">
+        <ul class="menu-align-right">
+          <li class="nav"> <%= link_to "Go Home", welcome_index_path, class: "nav-link" %></li>
+          <% if gallery_signed_in? %>
+            <li class="nav"> <%= link_to "Log Out", destroy_gallery_session_path, class: "nav-link" %></li><br />
+          <% else %>
+            <li class="nav"> <%= link_to "Log Out", destroy_artist_session_path, class: "nav-link" %></li><br />
+          <% end %>
+        </ul>
 
+      </div>
+    </div>
 
   <div class="row column">
     <% flash.each do |name, msg| %>
@@ -35,21 +45,14 @@
       <% end %>
     <% end %>
 
+    <div class="page-header">
+      <h1><%= yield :page_header %></h1>
+    </div>
+
     <div class="row column">
       <%= yield %>
     </div>
 
-    <div class="row column">
-      <% if current_artist %>
-        <%= link_to "Log Out", destroy_artist_session_path, class: "nav-link" %>
-      <% end %>
-    </div>
-
-    <div class="row column">
-    <% if current_gallery %>
-      <%= link_to "Log Out", destroy_gallery_session_path, class: "nav-link" %>
-    <% end %>
-    </div>
 
   </body>
 </html>
