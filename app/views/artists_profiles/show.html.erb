@@ -1,11 +1,9 @@
-
-<ul class="side-nav">
-<h2> <%= @profile.artist.first_name %> <%= @profile.artist.last_name %>'s Profile </h2>
+<h2><%= @profile.artist.first_name %> <%= @profile.artist.last_name %>'s Profile </h2>
+<hr>
 <%= @profile.artist.role.capitalize %><br />
 Email: <%= @profile.artist.email %><br />
 
   <%= image_tag @profile.avatar.thumb.url %>
-
 
 <div class="bio">
   <p>
@@ -16,8 +14,6 @@ Email: <%= @profile.artist.email %><br />
   </p>
   <br />
 </div>
-
-
 
 <% if artist_signed_in? %>
   <div class="edit_account">
@@ -31,7 +27,6 @@ Email: <%= @profile.artist.email %><br />
   <div class="art">
     <%= link_to "Upload art", new_artist_artwork_path(@profile) %>
   </div>
-
 <% end %>
 
 <% if gallery_signed_in? %>

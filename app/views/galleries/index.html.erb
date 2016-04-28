@@ -4,7 +4,7 @@
   <div class="links">
     <% if gallery_signed_in? %>
       <%= link_to "Gallery Profile", gallery_profile_path(@profile) %>
-      <%= link_to "Recently uploaded art", artists_path %>
+      <div class="centered"><%= link_to "Recently uploaded art", artists_path %></div>
     <% end %>
   </div>
 </div>

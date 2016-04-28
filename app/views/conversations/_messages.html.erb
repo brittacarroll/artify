@@ -10,9 +10,10 @@
               <%= message.sender.first_name %>
             <% end %>
             <small><b>Subject: </b><%= message.subject %></small><br>
-            <small><b>Date: </b><%=  message.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></small>
+            <small><b>Date: </b><%=  message.created_at.strftime("%A, %b %d, %Y at %I:%M%P") %></small>
           </h4>
           <%= message.body %>
+          <hr>
         </div>
       </div>
     <% end %>

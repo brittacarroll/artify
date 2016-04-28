@@ -1,9 +1,11 @@
-<h2> <%= @profile.gallery.name %></h2>
-  <%= @profile.gallery.representative_name.split.map(&:capitalize).join(' ') %><br />
-  Email: <%= @profile.gallery.email %><br />
-
+<div class="small-12 columns">
+  <h2><%= @profile.gallery.name %></h2>
+</div>
+  <div class="small-12 medium-6 columns">
+    <hr><%= @profile.gallery.representative_name.split.map(&:capitalize).join(' ') %><br /></hr>
+    Email: <%= @profile.gallery.email %><br />
     <%= image_tag @profile.avatar.thumb.url %>
-
+  </div>
 
     <div class="bio">
       <p>
@@ -15,26 +17,26 @@
     <br />
   </div>
 
-      <div class="small-6 columns gallery-artists border">
-        Selected artists:
-          <% if @relations != nil %>
-            <% @relations.each do |artist| %>
-            <ul>
-              <li class="gallery"><%= link_to "#{artist.first_name} #{artist.last_name}", artists_profile_path(@artist_profile) %><li>
-            </ul>
-            <% end %>
+    <div class="small-6 columns gallery-artists border">
+      Selected artists:
+        <% if @relations != nil %>
+          <% @relations.each do |artist| %>
+          <ul>
+            <li class="gallery"><%= link_to "#{artist.first_name} #{artist.last_name}", artists_profile_path(@artist_profile) %><li>
+          </ul>
           <% end %>
-        </div>
+        <% end %>
+    </div>
 
-    <div class="edit_account">
+    <br />
+    <div class="small-12 medium-6 columns">
       <%= link_to "Edit profile", edit_gallery_registration_path(@profile)  %>
     </div>
 
-    <div class="Avatar">
+    <div class="small-12 medium-6 columns">
       <%= link_to "Add a gallery profile picture", edit_gallery_profile_path(@profile) %>
     </div>
 
-
-    <div class="home_page">
+    <div class="small-12 medium-6 columns">
       <%= link_to "Home", new_gallery_session_path %>
     </div>
