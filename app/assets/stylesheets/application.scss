@@ -22,6 +22,10 @@ $font-family: 'Open Sans', sans-serif;
 $light-purple: #BF5FFF;
 $white: #ffffff;
 
+a {
+  color: $deep-blue;
+}
+
 div.top-bar {
   li {
     display: inline-block;

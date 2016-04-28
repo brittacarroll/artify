@@ -28,14 +28,13 @@ class ArtworksController < ApplicationController
     end
   end
 
-  # def destroy
-  #   binding.pry
-  #   @artist = Artist.find(params[:artist_id])
-  #   @artwork = Artwork.find(params[:id])
-  #   @artwork.destroy
-  #   flash[:notice] = "Succesfully deleted artwork!"
-  #   redirect_to artists_path
-  # end
+  def destroy
+    @artwork = Artwork.find(params[:artist_id])
+    @artist = @artwork.artist
+    @artwork.destroy
+    flash[:notice] = "Succesfully deleted artwork!"
+    redirect_to artists_path
+  end
 
   private
 
