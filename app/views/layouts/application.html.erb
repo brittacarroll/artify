@@ -18,19 +18,22 @@
   </head>
 
   <body>
-    <div class="top-bar">
+    <div class="top-bar brittas-bar">
       <div class="top-bar-left">
-        <%= link_to image_tag('/assets/artify.png', height: '40%', width: '40%'), root_path, id: "logo" %>
+        <%= link_to image_tag('/assets/artify.png'), root_path, class: "logo" %>
       </div>
 
       <div class="top-bar-right">
         <ul class="menu-align-right">
-          <li class="nav"> <%= link_to "Go Home", welcome_index_path, class: "nav-link" %></li>
           <% if gallery_signed_in? %>
-            <li class="nav"> <%= link_to "Log Out", destroy_gallery_session_path, class: "nav-link" %></li><br />
+            <li class="nav">
+              <%= link_to "Log Out", destroy_gallery_session_path, class: "nav-link" %>
+            </li>
             <li><%= link_to "Inbox", mailbox_inbox_path %></li>
           <% else %>
-            <li class="nav"> <%= link_to "Log Out", destroy_artist_session_path, class: "nav-link" %></li><br />
+            <li class="nav">
+              <%= link_to "Log Out", destroy_artist_session_path, class: "nav-link" %>
+            </li>
             <li><%= link_to "Inbox", mailbox_inbox_path %></li>
           <% end %>
         </ul>
@@ -54,7 +57,5 @@
     <div class="row column">
       <%= yield %>
     </div>
-
-
   </body>
 </html>

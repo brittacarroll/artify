@@ -27,7 +27,4 @@ Rails.application.routes.draw do
       post :untrash
     end
   end
-  #
-  # resources :conversations, only: [:index, :show, :destroy]
-  # resources :messages, only: [:new, :create]
 end

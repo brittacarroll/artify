@@ -1,7 +1,4 @@
 class MailboxesController < ApplicationController
-  before_action :authenticate_artist!
-  before_action :authenticate_gallery!
-
   def inbox
     @inbox = mailbox.inbox
     @active = :inbox
