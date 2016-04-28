@@ -14,10 +14,6 @@ class ApplicationController < ActionController::Base
     @conversation ||= mailbox.conversations.find(params[:id])
   end
 
-  def mailer_set_url_options
-   ActionMailer::Base.default_url_options[:host] = 'request.host_with_port'
-  end
-
   protected
 
   def configure_permitted_parameters
