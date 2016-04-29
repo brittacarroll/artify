@@ -33,7 +33,7 @@
           <ul>
             <li><%= image_tag piece.art.thumb.url %></li>
             <li><%= link_to "Artist: #{piece.artist.first_name} #{piece.artist.last_name}",
-                artists_profile_path(@artist_profile_1), id: "artist_name" %></li>
+                artists_profile_path(piece.artist), id: "artist_name" %></li>
             <hr><li>Title: <%= piece.title %></li></hr>
             <hr><li>Description: <%= piece.description %></li></hr>
             <% if current_artist == piece.artist %>
