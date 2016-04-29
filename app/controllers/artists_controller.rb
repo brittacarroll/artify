@@ -6,6 +6,7 @@ class ArtistsController < ApplicationController
       @artist = current_artist
       @profile = current_artist.artists_profile
     end
+
     @art = Artwork.all
 
     if !current_gallery.nil?
