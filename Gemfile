@@ -19,8 +19,6 @@ gem 'mailboxer'
 gem 'will_paginate'
 
 
-
-
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
