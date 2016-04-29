@@ -1,4 +1,5 @@
-<h2><%= @profile.artist.first_name %> <%= @profile.artist.last_name %>'s Profile </h2>
+<div class="content-container">
+  <h2><%= @profile.artist.first_name %> <%= @profile.artist.last_name %>'s Profile </h2>
 <hr>
 <%= @profile.artist.role.capitalize %><br />
 Email: <%= @profile.artist.email %><br />
@@ -33,3 +34,4 @@ Email: <%= @profile.artist.email %><br />
   <%= link_to "Select this artist", artists_profile_relations_path(@profile.artist), method: :post %>
 <% end %>
 </ul>
+</div>

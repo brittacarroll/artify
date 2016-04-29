@@ -4,6 +4,12 @@ class ApplicationController < ActionController::Base
 
   helper_method :mailbox, :current_user, :conversation
 
+
+
+
+  element.style {
+      padding: 15px;
+      background-color: lightgrey;
   private
 
   def mailbox
