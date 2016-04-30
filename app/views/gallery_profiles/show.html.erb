@@ -1,22 +1,39 @@
 <div class="small-12 columns">
   <h2><%= @profile.gallery.name %></h2>
 </div>
+  <div class="small-12 medium-6 columns end">
+    <div class="content-container">
+      <div class="gallery-info">
+        <hr>
+          Representative name: <%= @profile.gallery.representative_name.split.map(&:capitalize).join(' ') %><br />
+          Email: <%= @profile.gallery.email %><br />
+          <%= image_tag @profile.avatar.thumb.url %>
+      </div>
+
+      <div class="description">
+          <p>
+            <% if @profile.gallery.description %>
+              About the gallery: <%= @profile.gallery.description %>
+            <br><br>
+            <% end %>
+          </p>
+        <br />
+      </div>
+
+      <div class="small-12 flex">
+        <%= link_to "Edit profile", edit_gallery_registration_path(@profile)  %>
+      </div>
+
+      <div class="small-12">
+        <%= link_to "Add a gallery profile picture", edit_gallery_profile_path(@profile) %>
+      </div>
+
+      <div class="small-12">
+        <%= link_to "Home", new_gallery_session_path %>
+      </div>
+    </div>
+  </div>
   <div class="small-12 medium-6 columns">
-    <hr><%= @profile.gallery.representative_name.split.map(&:capitalize).join(' ') %><br /></hr>
-    Email: <%= @profile.gallery.email %><br />
-    <%= image_tag @profile.avatar.thumb.url %>
-  </div>
-
-    <div class="bio">
-      <p>
-        <% if @profile.description %>
-          About the gallery: <%= @profile.description %>
-        <br><br>
-        <% end %>
-      </p>
-    <br />
-  </div>
-
     <div class="small-6 columns gallery-artists border">
       Selected artists:
         <% if @relations != nil %>
@@ -27,16 +44,4 @@
           <% end %>
         <% end %>
     </div>
-
-    <br />
-    <div class="small-12 medium-6 columns">
-      <%= link_to "Edit profile", edit_gallery_registration_path(@profile)  %>
-    </div>
-
-    <div class="small-12 medium-6 columns">
-      <%= link_to "Add a gallery profile picture", edit_gallery_profile_path(@profile) %>
-    </div>
-
-    <div class="small-12 medium-6 columns">
-      <%= link_to "Home", new_gallery_session_path %>
-    </div>
+  </div>

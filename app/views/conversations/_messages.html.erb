@@ -1,20 +1,21 @@
+<div class="row">
 <% unless @receipts.nil? %>
   <% @receipts.each do |receipt| %>
+    <div class="row">
       <% message = receipt.message %>
-      <div class="media">
-        <div class="media-body">
-          <h4 class="media-heading">
-            <% if message.sender.is_a?(Gallery) %>
-              <%= message.sender.name %> <br>
-            <% else %>
-              <%= message.sender.first_name %>
-            <% end %>
-            <small><b>Subject: </b><%= message.subject %></small><br>
-            <small><b>Date: </b><%=  message.created_at.strftime("%A, %b %d, %Y at %I:%M%P") %></small>
-          </h4>
-          <%= message.body %>
-          <hr>
-        </div>
+      <div class="small-4 columns message-info">
+        <% if message.sender.is_a?(Gallery) %>
+          <%= message.sender.name %> <br>
+        <% else %>
+          <%= message.sender.first_name %>
+        <% end %>
+          <small><b>Subject: </b><%= message.subject %></small><br>
+          <small><b>Date: </b><%=  message.created_at.strftime("%A, %b %d, %Y at %I:%M%P") %></small>
       </div>
+      <div class="small-7 columns">
+        Message:<%= message.body %>
+      </div>
+    </div>
     <% end %>
   <% end %>
+</div>

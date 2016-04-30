@@ -1,6 +1,6 @@
 <div class="media">
   <div class="media-body">
-    <h4 class="media-heading">
+      <div class="content-container">
       <% if conversation.originator.is_a?(Gallery) %>
         <%= conversation.originator.name %> <br>
       <% else %>
@@ -8,8 +8,9 @@
       <% end %>
       <small><b>Subject: </b><%= conversation.subject %></small><br>
       <small><b>Date: </b><%=  conversation.messages.last.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></small>
-    </h4>
-    <%= truncate conversation.messages.last.body, length: 145 %>
-    <%= link_to "View", conversation_path(conversation)  %>
+      <hr>
+      <%= truncate conversation.messages.last.body, length: 145 %>
+      <%= link_to "View", conversation_path(conversation)  %>
+    </div>
   </div>
 </div>

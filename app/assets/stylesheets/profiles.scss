@@ -1,3 +1,5 @@
+$light-gray: #D3D3D3;
+
 .gallery-artists {
   float: right;
 }
@@ -12,4 +14,20 @@
 
 .gallery li {
   display: present;
+}
+
+.small-3.small-offset-1.columns {
+  font-color: #000000;
+}
+
+
+.content-container {
+  padding: 15px;
+  background-color: #ffffff;
+  opacity: 0.8;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-info {
+  float: left;
 }
