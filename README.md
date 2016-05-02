@@ -1,9 +1,9 @@
 #Artify
-by Britta Carroll
 ![Build Status](https://codeship.com/projects/7f45f120-e873-0133-e1f1-7ab9be0b8d5f/status?branch=master)
 ![Code Climate](https://codeclimate.com/github/brittacarroll/artify.png)
 ![Coverage Status](https://coveralls.io/repos/brittacarroll/artify/badge.png)
 
+by Britta Carroll
 
 Artify is an app that allows artists to upload pictures of their artwork, and for
 galleries to be able to sign-up, view uploaded artwork, and select artists they are interested in.
