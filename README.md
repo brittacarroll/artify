@@ -16,10 +16,10 @@ Ruby version 2.2.3
 ##Configuration:
 
 Run the following (after git cloning):
-  ``bundle install``
-  ``rake db:create``
-  ``rake db:migrate``
-  ``rails s``
+  * ``bundle install``
+  * ``rake db:create``
+  * ``rake db:migrate``
+  * ``rails s``
 
 ##Features:
 
