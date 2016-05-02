@@ -4,29 +4,20 @@
 ![Coverage Status](https://coveralls.io/repos/brittacarroll/artify/badge.png)
 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Artify is an app that allows artists to upload pictures of their artwork, and for
+galleries to be able to sign-up, view that artwork, and select artists they are interested in.
 
-Things you may want to cover:
+* Ruby version:
 
-* Ruby version
+Ruby version 2.2.3
 
-* System dependencies
+Heroku:
 
-* Configuration
+artify.herokuapp.com
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Configuration:
+Run the following (after git cloning):
+  ``bundle install``
+  ``rake db:create``
+  ``rake db:migrate``
+  ``rails s``
